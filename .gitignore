@@ -1,1 +1,11 @@
 .env
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LibreOffice / Office temp & lock files
+*.tmp
+.~lock.*#
+~$*
