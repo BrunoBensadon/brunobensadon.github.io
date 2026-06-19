@@ -4,34 +4,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-en="Bruno Bensadon" data-pt="Bruno Bensadon">Bruno Bensadon</title>
-  <meta name="description" content="Bruno Bensadon — economics undergraduate at FGV-SP working at the intersection of economics, data and AI. Research, training and photography.">
+  <meta name="description" content="Bruno Bensadon — economics at FGV São Paulo. Research, training and photography, gathered in one place.">
   <meta name="author" content="Bruno Bensadon">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bruno Bensadon">
-  <meta property="og:description" content="Economics · Data · AI — research, training and photography.">
+  <meta property="og:description" content="Economics, training and photography — a deliberate generalist.">
   <meta property="og:url" content="https://brunobensadon.github.io/">
-
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-
-  <!-- set language before paint to avoid a flash of the wrong language -->
   <script>
     (function () {
       try {
         var s = localStorage.getItem("bb-lang");
         if (s !== "en" && s !== "pt") s = (navigator.language||"en").toLowerCase().indexOf("pt")===0 ? "pt" : "en";
         document.documentElement.setAttribute("data-lang", s);
-        document.documentElement.setAttribute("lang", s);
+        document.documentElement.setAttribute("lang", s === "pt" ? "pt-BR" : "en");
       } catch (e) {}
     })();
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main"><span class="en">Skip to content</span><span class="pt">Pular para o conteúdo</span></a>
 
   <!-- ===================== NAV ===================== -->
   <header class="nav">
@@ -39,13 +35,13 @@
       <a class="brand" href="index.html">Bruno Bensadon<span class="dot">.</span></a>
       <nav class="right" aria-label="Primary">
         <ul class="nav-links collapsible">
-          <li><a href="#about"><span class="en">About</span><span class="pt">Sobre</span></a></li>
+          <li><a href="index.html#index" aria-current="page"><span class="en">About</span><span class="pt">Sobre</span></a></li>
           <li><a href="research.html"><span class="en">Research</span><span class="pt">Pesquisa</span></a></li>
           <li><a href="training.html"><span class="en">Training</span><span class="pt">Treinamento</span></a></li>
           <li><a href="photography.html"><span class="en">Photography</span><span class="pt">Fotografia</span></a></li>
-          <li><a href="#cv"><span class="en">CV &amp; Contact</span><span class="pt">CV &amp; Contato</span></a></li>
+          <li><a href="cv.html"><span class="en">CV &amp; Contact</span><span class="pt">CV &amp; Contato</span></a></li>
         </ul>
-        <div class="lang-toggle" role="group" aria-label="Language">
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="pt" aria-pressed="false">PT</button>
         </div>
@@ -54,193 +50,98 @@
     </div>
   </header>
 
-  <main>
-    <!-- ===================== HERO / ABOUT ===================== -->
-    <section id="about" class="hero">
+  <main id="main">
+    <!-- ===================== HERO / STATEMENT ===================== -->
+    <section class="section hero-a">
       <div class="container">
         <div class="hero-grid">
-          <div class="reveal">
-            <span class="kicker">Economics · Data · AI</span>
-            <h1>Bruno Bensadon</h1>
-            <p class="sub">
-              <span class="en">São Paulo, Brazil — FGV School of Economics</span>
-              <span class="pt">São Paulo, Brasil — FGV Escola de Economia</span>
-            </p>
-            <p class="lead">
-              <span class="en">An economics undergraduate working where business meets technology.</span>
-              <span class="pt">Estudante de economia atuando onde os negócios encontram a tecnologia.</span>
-            </p>
-            <div class="prose">
-              <p>
-                <span class="en">I build applied-AI tools, research trade and tax policy, and train young leaders across CISV's global network — and I keep a camera close along the way. This site is a hub for those threads: <a href="research.html">research</a>, <a href="training.html">training</a>, and <a href="photography.html">photography</a>.</span>
-                <span class="pt">Construo ferramentas de IA aplicada, pesquiso política comercial e tributária e formo jovens líderes na rede global da CISV — sempre com uma câmera por perto. Este site reúne esses fios: <a href="research.html">pesquisa</a>, <a href="training.html">treinamento</a> e <a href="photography.html">fotografia</a>.</span>
-              </p>
-              <p>
-                <span class="en">My background is deliberately dual: programming since 2014 and a semester of Information Systems before pivoting to economics — so I'm as comfortable shipping a model as I am reading a balance sheet.</span>
-                <span class="pt">Minha formação é deliberadamente dupla: programação desde 2014 e um semestre de Sistemas de Informação antes de migrar para economia — então me sinto à vontade tanto entregando um modelo quanto lendo um balanço.</span>
+          <div>
+            <div class="reveal">
+              <span class="kicker"><span class="en">Economics · Training · Photography</span><span class="pt">Economia · Treinamento · Fotografia</span></span>
+              <h1 class="display">Bruno<br>Bensadon</h1>
+              <p class="sub">
+                <span class="en">São Paulo, Brazil — FGV School of Economics</span>
+                <span class="pt">São Paulo, Brasil — FGV Escola de Economia</span>
               </p>
             </div>
-            <div class="btn-row">
-              <a class="btn accent" href="#cv"><span class="en">View CV &amp; contact</span><span class="pt">Ver CV &amp; contato</span></a>
-              <a class="btn" href="mailto:brunobensadon@gmail.com">Email</a>
+            <div class="prose reveal d1" style="margin-top:0.4rem">
+              <p class="lead">
+                <span class="en">An economics student with curiosities that run across fields.</span>
+                <span class="pt">Estudante de economia com curiosidades que atravessam áreas.</span>
+              </p>
+              <p>
+                <span class="en">I study economics at FGV São Paulo, train young leaders across CISV's global network, and keep a camera close. This site gathers those threads — <a href="research.html">research</a>, <a href="training.html">training</a>, and <a href="photography.html">photography</a>.</span>
+                <span class="pt">Estudo economia na FGV São Paulo, formo jovens líderes na rede global da CISV e ando sempre com uma câmera por perto. Este site reúne esses fios — <a href="research.html">pesquisa</a>, <a href="training.html">treinamento</a> e <a href="photography.html">fotografia</a>.</span>
+              </p>
+              <div class="btn-row">
+                <a class="btn accent" href="cv.html"><span class="en">CV &amp; contact</span><span class="pt">CV &amp; contato</span> <span class="ar">→</span></a>
+                <a class="btn" href="mailto:brunobensadon@gmail.com">Email</a>
+              </div>
             </div>
           </div>
 
-          <div class="reveal">
-            <figure class="portrait-frame" style="margin:0">
-              <img src="assets/img/portrait.jpg"
-                   srcset="assets/img/portrait.jpg 560w, assets/img/portrait@2x.jpg 1120w"
-                   sizes="(max-width: 860px) 320px, 360px"
-                   width="560" height="700"
-                   alt="Portrait of Bruno Bensadon">
-              <figcaption class="portrait-cap">Bogotá · 2026</figcaption>
-            </figure>
-          </div>
+          <figure class="portrait-figure reveal d2">
+            <img src="assets/img/portrait-720.jpg"
+                 srcset="assets/img/portrait-720.jpg 720w, assets/img/portrait-1440.jpg 1152w"
+                 sizes="(max-width: 880px) 300px, 360px"
+                 width="720" height="900"
+                 alt="Portrait of Bruno Bensadon">
+            <figcaption class="plate"><span class="n">Pl. 1</span> <span>São Paulo · 2026</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- ===================== AREAS INDEX ===================== -->
-    <section id="work" class="section">
+    <section id="index" class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="no">01</span>
-          <h2><span class="en">Areas</span><span class="pt">Áreas</span></h2>
-        </div>
+        <div class="spread">
+          <aside class="margin reveal">
+            <span class="folio">01</span>
+            <span class="mnote"><span class="en">Index</span><span class="pt">Índice</span></span>
+            <span class="mnote rule"><span class="en">The work,<br>in three parts.</span><span class="pt">O trabalho,<br>em três partes.</span></span>
+          </aside>
 
-        <div class="index-list reveal">
-          <a class="index-row" href="research.html">
-            <span class="ix-no">01</span>
-            <span>
-              <span class="ix-title"><span class="en">Research</span><span class="pt">Pesquisa</span></span>
-              <span class="ix-desc">
-                <span class="en">Applied AI, international trade, and tax-policy work — from a Reforma Tributária chatbot to econometric studies of Brazilian exports.</span>
-                <span class="pt">IA aplicada, comércio internacional e política tributária — de um chatbot da Reforma Tributária a estudos econométricos das exportações brasileiras.</span>
-              </span>
-            </span>
-            <span class="ix-meta"><span class="tag live"><span class="en">3 projects</span><span class="pt">3 projetos</span></span> <span class="arrow">→</span></span>
-          </a>
+          <div class="body full">
+            <h2 class="reveal" style="margin-bottom:1.5rem"><span class="en">Areas</span><span class="pt">Áreas</span></h2>
+            <div class="index-list reveal d1">
 
-          <a class="index-row" href="training.html">
-            <span class="ix-no">02</span>
-            <span>
-              <span class="ix-title"><span class="en">Training</span><span class="pt">Treinamento</span></span>
-              <span class="ix-desc">
-                <span class="en">Facilitation and curriculum design across CISV's peace-education network — sessions led, trainers trained, materials authored.</span>
-                <span class="pt">Facilitação e desenho curricular na rede de educação para a paz da CISV — sessões conduzidas, formadores treinados, materiais autorais.</span>
-              </span>
-            </span>
-            <span class="ix-meta"><span class="tag"><span class="en">in progress</span><span class="pt">em construção</span></span> <span class="arrow">→</span></span>
-          </a>
-
-          <a class="index-row" href="photography.html">
-            <span class="ix-no">03</span>
-            <span>
-              <span class="ix-title"><span class="en">Photography</span><span class="pt">Fotografia</span></span>
-              <span class="ix-desc">
-                <span class="en">A small, growing portfolio shot on Fujifilm — portraits, places, and people from the road.</span>
-                <span class="pt">Um portfólio pequeno e crescente, fotografado em Fujifilm — retratos, lugares e pessoas pelo caminho.</span>
-              </span>
-            </span>
-            <span class="ix-meta"><span class="tag"><span class="en">coming soon</span><span class="pt">em breve</span></span> <span class="arrow">→</span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== CV & CONTACT ===================== -->
-    <section id="cv" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="no">02</span>
-          <h2><span class="en">Curriculum &amp; contact</span><span class="pt">Currículo &amp; contato</span></h2>
-        </div>
-
-        <div class="cols">
-          <!-- left: CV highlights -->
-          <div class="reveal">
-            <div class="cv-block">
-              <h3><span class="en">Education</span><span class="pt">Formação</span></h3>
-              <div class="entry">
+              <a class="index-row" href="research.html">
+                <span class="ix-no">01</span>
                 <span>
-                  <span class="e-title"><span class="en">BSc Economics</span><span class="pt">Bacharelado em Economia</span></span><br>
-                  <span class="e-org">FGV — Escola de Economia de São Paulo (EESP)</span>
+                  <span class="ix-title"><span class="en">Research</span><span class="pt">Pesquisa</span></span>
+                  <span class="ix-desc">
+                    <span class="en">Trade, tax policy and applied methods — at the edges of economics.</span>
+                    <span class="pt">Comércio, política tributária e métodos aplicados — nas bordas da economia.</span>
+                  </span>
                 </span>
-                <span class="e-date"><span class="en">exp. Dec 2027</span><span class="pt">prev. dez 2027</span></span>
-              </div>
-              <div class="entry">
-                <span>
-                  <span class="e-title"><span class="en">Information Systems</span><span class="pt">Sistemas de Informação</span></span><br>
-                  <span class="e-org"><span class="en">ESPM — one semester, foundation in computing</span><span class="pt">ESPM — um semestre, base em computação</span></span>
-                </span>
-                <span class="e-date">2023</span>
-              </div>
-            </div>
-
-            <div class="cv-block">
-              <h3><span class="en">Selected experience</span><span class="pt">Experiência selecionada</span></h3>
-              <div class="entry">
-                <span>
-                  <span class="e-title">National Junior Representative</span><br>
-                  <span class="e-org">CISV Brasil</span>
-                </span>
-                <span class="e-date">2026 —</span>
-              </div>
-              <div class="entry">
-                <span>
-                  <span class="e-title"><span class="en">Training Strategy Specialist</span><span class="pt">Especialista em Estratégia de Treinamento</span></span><br>
-                  <span class="e-org">CISV International</span>
-                </span>
-                <span class="e-date">2025 —</span>
-              </div>
-              <div class="entry">
-                <span>
-                  <span class="e-title"><span class="en">Financial Advisor</span><span class="pt">Conselheiro Financeiro</span></span><br>
-                  <span class="e-org"><span class="en">CISV Brasil — National Finance Commission</span><span class="pt">CISV Brasil — Comissão Nacional de Finanças</span></span>
-                </span>
-                <span class="e-date">2024 —</span>
-              </div>
-              <div class="entry">
-                <span>
-                  <span class="e-title"><span class="en">Educational Programmes Manager</span><span class="pt">Gerente de Programas Educacionais</span></span><br>
-                  <span class="e-org">CISV São Paulo</span>
-                </span>
-                <span class="e-date">2022 —</span>
-              </div>
-            </div>
-
-            <div class="btn-row">
-              <a class="btn accent" href="cv/CV_Bruno_Bensadon.pdf" target="_blank" rel="noopener">
-                <span class="en">Download CV (PDF)</span><span class="pt">Baixar CV (PDF)</span>
+                <span class="ix-meta"><span class="tag live"><span class="en">3 projects</span><span class="pt">3 projetos</span></span> <span class="arrow">→</span></span>
               </a>
-              <a class="btn" href="cv/CV_Bruno_Bensadon.docx">
-                <span class="en">.docx</span><span class="pt">.docx</span>
+
+              <a class="index-row" href="training.html">
+                <span class="ix-no">02</span>
+                <span>
+                  <span class="ix-title"><span class="en">Training</span><span class="pt">Treinamento</span></span>
+                  <span class="ix-desc">
+                    <span class="en">Facilitation and curriculum design across CISV's peace-education network.</span>
+                    <span class="pt">Facilitação e desenho curricular na rede de educação para a paz da CISV.</span>
+                  </span>
+                </span>
+                <span class="ix-meta"><span class="tag"><span class="en">4 years</span><span class="pt">4 anos</span></span> <span class="arrow">→</span></span>
               </a>
-            </div>
-          </div>
 
-          <!-- right: skills + contact -->
-          <div class="reveal">
-            <div class="cv-block">
-              <h3><span class="en">Toolkit</span><span class="pt">Ferramentas</span></h3>
-              <dl class="def">
-                <dt><span class="en">Technical</span><span class="pt">Técnicas</span></dt>
-                <dd>Python, SQL, R, Git/GitHub, Machine Learning &amp; NLP, <span class="en">data analysis</span><span class="pt">análise de dados</span></dd>
-                <dt><span class="en">Languages</span><span class="pt">Idiomas</span></dt>
-                <dd><span class="en">Portuguese (native), English (fluent — CAE), Spanish (advanced — DELE C1)</span><span class="pt">Português (nativo), Inglês (fluente — CAE), Espanhol (avançado — DELE C1)</span></dd>
-                <dt><span class="en">Domains</span><span class="pt">Domínios</span></dt>
-                <dd><span class="en">Applied AI, trade &amp; tax economics, youth-leadership training</span><span class="pt">IA aplicada, economia comercial &amp; tributária, formação de lideranças jovens</span></dd>
-              </dl>
-            </div>
+              <a class="index-row" href="photography.html">
+                <span class="ix-no">03</span>
+                <span>
+                  <span class="ix-title"><span class="en">Photography</span><span class="pt">Fotografia</span></span>
+                  <span class="ix-desc">
+                    <span class="en">A small, growing portfolio shot on Fujifilm.</span>
+                    <span class="pt">Um portfólio pequeno e crescente, em Fujifilm.</span>
+                  </span>
+                </span>
+                <span class="ix-meta"><span class="tag"><span class="en">gallery</span><span class="pt">galeria</span></span> <span class="arrow">→</span></span>
+              </a>
 
-            <div class="cv-block">
-              <h3><span class="en">Contact</span><span class="pt">Contato</span></h3>
-              <ul class="contact-list">
-                <li><span class="k">Email</span><a class="link" href="mailto:brunobensadon@gmail.com">brunobensadon@gmail.com</a></li>
-                <li><span class="k">LinkedIn</span><a class="link" href="https://www.linkedin.com/in/brunobensadon/" target="_blank" rel="noopener">in/brunobensadon</a></li>
-                <li><span class="k">GitHub</span><a class="link" href="https://github.com/brunobensadon" target="_blank" rel="noopener">@brunobensadon</a></li>
-                <li><span class="k"><span class="en">Location</span><span class="pt">Local</span></span><span>São Paulo, Brasil</span></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -252,10 +153,13 @@
   <footer class="footer">
     <div class="container">
       <p>© <span id="year">2026</span> Bruno Bensadon</p>
-      <p>
-        <span class="en">Built by hand — Spectral &amp; IBM Plex Mono.</span>
-        <span class="pt">Feito à mão — Spectral &amp; IBM Plex Mono.</span>
-      </p>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="research.html"><span class="en">Research</span><span class="pt">Pesquisa</span></a>
+        <a href="training.html"><span class="en">Training</span><span class="pt">Treinamento</span></a>
+        <a href="photography.html"><span class="en">Photography</span><span class="pt">Fotografia</span></a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <p><span class="en">Set in Spectral &amp; IBM Plex Mono.</span><span class="pt">Composto em Spectral &amp; IBM Plex Mono.</span></p>
     </div>
   </footer>
 

@@ -8,23 +8,25 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <script>(function(){try{var s=localStorage.getItem("bb-lang");if(s!=="en"&&s!=="pt")s=(navigator.language||"en").toLowerCase().indexOf("pt")===0?"pt":"en";document.documentElement.setAttribute("data-lang",s);document.documentElement.setAttribute("lang",s);}catch(e){}})();</script>
+  <script>(function(){try{var s=localStorage.getItem("bb-lang");if(s!=="en"&&s!=="pt")s=(navigator.language||"en").toLowerCase().indexOf("pt")===0?"pt":"en";document.documentElement.setAttribute("data-lang",s);document.documentElement.setAttribute("lang",s==="pt"?"pt-BR":"en");}catch(e){}})();</script>
 </head>
 <body>
+  <a class="skip-link" href="#main"><span class="en">Skip to content</span><span class="pt">Pular para o conteúdo</span></a>
+
   <header class="nav">
     <div class="container">
       <a class="brand" href="index.html">Bruno Bensadon<span class="dot">.</span></a>
       <nav class="right" aria-label="Primary">
         <ul class="nav-links collapsible">
-          <li><a href="index.html#about"><span class="en">About</span><span class="pt">Sobre</span></a></li>
+          <li><a href="index.html#index"><span class="en">About</span><span class="pt">Sobre</span></a></li>
           <li><a href="research.html"><span class="en">Research</span><span class="pt">Pesquisa</span></a></li>
           <li><a href="training.html"><span class="en">Training</span><span class="pt">Treinamento</span></a></li>
           <li><a href="photography.html" aria-current="page"><span class="en">Photography</span><span class="pt">Fotografia</span></a></li>
-          <li><a href="index.html#cv"><span class="en">CV &amp; Contact</span><span class="pt">CV &amp; Contato</span></a></li>
+          <li><a href="cv.html"><span class="en">CV &amp; Contact</span><span class="pt">CV &amp; Contato</span></a></li>
         </ul>
-        <div class="lang-toggle" role="group" aria-label="Language">
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
           <button type="button" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" data-lang="pt" aria-pressed="false">PT</button>
         </div>
@@ -33,31 +35,96 @@
     </div>
   </header>
 
-  <main>
-    <section class="section stub" style="border-top:0">
+  <main id="main">
+    <section class="section" style="padding-bottom:clamp(1.4rem,3.5vw,2.2rem)">
       <div class="container">
-        <div class="reveal" style="max-width:64ch">
-          <span class="kicker"><span class="en">Photography</span><span class="pt">Fotografia</span></span>
-          <h1><span class="en">A portfolio in the making</span><span class="pt">Um portfólio em construção</span></h1>
-          <p class="prose">
-            <span class="en">I shoot on Fujifilm — portraits, places and the people I meet through CISV and travel. The full gallery is being curated and optimized for the web; check back soon.</span>
-            <span class="pt">Fotografo em Fujifilm — retratos, lugares e as pessoas que encontro pela CISV e em viagens. A galeria completa está sendo curada e otimizada para a web; volte em breve.</span>
-          </p>
-          <p class="note" style="font-family:var(--mono); font-size:.78rem; color:var(--ink-soft); border-left:2px solid var(--accent); padding-left:1rem; max-width:60ch; line-height:1.7">
-            <span class="en">Curating the first set now. Want a preview? <a class="link" href="mailto:brunobensadon@gmail.com">Email me.</a></span>
-            <span class="pt">Curando a primeira seleção agora. Quer uma prévia? <a class="link" href="mailto:brunobensadon@gmail.com">Me escreva.</a></span>
-          </p>
+        <div class="spread">
+          <aside class="margin reveal">
+            <span class="folio">P</span>
+            <span class="mnote rule"><a href="index.html#index"><span class="en">↩ Index</span><span class="pt">↩ Índice</span></a></span>
+            <span class="mnote">Fujifilm X-T5</span>
+          </aside>
+          <div class="body">
+            <span class="kicker reveal"><span class="en">Photography</span><span class="pt">Fotografia</span></span>
+            <h1 class="reveal d1"><span class="en">Places, people, light</span><span class="pt">Lugares, pessoas, luz</span></h1>
+            <p class="prose reveal d2">
+              <span class="en">A portfolio shot on Fujifilm — portraits, places, and the people I meet through CISV and travel. I'm curating and optimizing the first set; the gallery lands here shortly.</span>
+              <span class="pt">Um portfólio fotografado em Fujifilm — retratos, lugares e as pessoas que encontro pela CISV e em viagens. Estou curando e otimizando a primeira seleção; a galeria chega aqui em breve.</span>
+            </p>
+            <p class="note reveal d3" style="margin-top:1.8rem">
+              <span class="en">Want a preview, prints, or full-resolution files? <a class="link" href="mailto:brunobensadon@gmail.com">Email me.</a></span>
+              <span class="pt">Quer uma prévia, cópias ou arquivos em alta resolução? <a class="link" href="mailto:brunobensadon@gmail.com">Me escreva.</a></span>
+            </p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- =================================================================
+       GALLERY TEMPLATE — ready to populate with real Fujifilm frames.
+       The masonry gallery + accessible lightbox are fully styled in
+       style.css and wired in main.js. To go live:
+         1. Drop web-optimized images into assets/img/photography/ as
+            NAME-display.jpg (long edge ~1200px) and NAME-full.jpg (~2000px).
+         2. Replace the <main> above with the markup below (remove this
+            comment), one <button class="plate-item"> per photograph.
+         3. Keep the <div class="lightbox" id="lightbox"> block before </body>.
+
+  <main id="main">
+    <section class="section" style="padding-bottom:clamp(1.4rem,3.5vw,2.2rem)">
+      <div class="container"><div class="spread">
+        <aside class="margin reveal">
+          <span class="folio">P</span>
+          <span class="mnote rule"><a href="index.html#index"><span class="en">↩ Index</span><span class="pt">↩ Índice</span></a></span>
+          <span class="mnote">Fujifilm X-T5</span>
+        </aside>
+        <div class="body">
+          <span class="kicker reveal"><span class="en">Photography</span><span class="pt">Fotografia</span></span>
+          <h1 class="reveal d1"><span class="en">Places, people, light</span><span class="pt">Lugares, pessoas, luz</span></h1>
+          <p class="prose reveal d2"><span class="en">A small, growing set shot on Fujifilm. Select a plate to enlarge.</span><span class="pt">Uma seleção pequena e crescente, em Fujifilm. Toque numa prancha para ampliar.</span></p>
+        </div>
+      </div></div>
+    </section>
+    <section class="section" style="border-top:0; padding-top:0">
+      <div class="container">
+        <div class="gallery reveal">
+          <button class="plate-item" type="button"
+            data-full="assets/img/photography/NAME-full.jpg"
+            data-n="01" data-en="Caption · Place, Year" data-pt="Legenda · Lugar, Ano">
+            <span class="shot"><img src="assets/img/photography/NAME-display.jpg" loading="lazy" alt="Describe the photograph" width="800" height="1200"></span>
+            <figcaption class="plate"><span class="n">Pl. 01</span> <span class="place"><span class="en">Place · Year</span><span class="pt">Lugar · Ano</span></span></figcaption>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer" aria-hidden="true">
+    <button class="lb-close" type="button"><span class="en">Close</span><span class="pt">Fechar</span> <span aria-hidden="true">✕</span></button>
+    <div class="lb-stage"><img src="" alt=""></div>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous">←</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next">→</button>
+    <div class="lb-bar container">
+      <span class="lb-cap"><span class="n">Pl. 01</span> <span class="place"><span class="en"></span><span class="pt"></span></span></span>
+      <span class="lb-count">01 / 01</span>
+    </div>
+  </div>
+  ================================================================= -->
+
   <footer class="footer">
     <div class="container">
       <p>© <span id="year">2026</span> Bruno Bensadon</p>
-      <p><a href="index.html"><span class="en">← Back home</span><span class="pt">← Início</span></a></p>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="index.html"><span class="en">Home</span><span class="pt">Início</span></a>
+        <a href="research.html"><span class="en">Research</span><span class="pt">Pesquisa</span></a>
+        <a href="training.html"><span class="en">Training</span><span class="pt">Treinamento</span></a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <p><span class="en">Set in Spectral &amp; IBM Plex Mono.</span><span class="pt">Composto em Spectral &amp; IBM Plex Mono.</span></p>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
