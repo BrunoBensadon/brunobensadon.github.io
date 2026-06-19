@@ -58,51 +58,9 @@
 
     <section class="section" style="border-top:0; padding-top:0">
       <div class="container">
-        <div class="gallery reveal">
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF2858-full.jpg"
-            data-n="01" data-en="Trilha · Serra do Cipó, 2025" data-pt="Trilha · Serra do Cipó, 2025">
-            <span class="shot"><img src="assets/img/photography/DSCF2858-display.jpg" loading="lazy" alt="A hiker and dog face a mountain in the highlands" width="800" height="1200"></span>
-            <figcaption class="plate"><span class="n">Pl. 01</span> <span class="place"><span class="en">Serra do Cipó · 2025</span><span class="pt">Serra do Cipó · 2025</span></span></figcaption>
-          </button>
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF1312-full.jpg"
-            data-n="02" data-en="Busker, centro · São Paulo, 2024" data-pt="Músico de rua, centro · São Paulo, 2024">
-            <span class="shot"><img src="assets/img/photography/DSCF1312-display.jpg" loading="lazy" alt="A street musician plays guitar on a São Paulo pavement" width="800" height="1200"></span>
-            <figcaption class="plate"><span class="n">Pl. 02</span> <span class="place"><span class="en">Centro · São Paulo, 2024</span><span class="pt">Centro · São Paulo, 2024</span></span></figcaption>
-          </button>
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF2762-full.jpg"
-            data-n="03" data-en="Fuscas · interior de SP, 2025" data-pt="Fuscas · interior de SP, 2025">
-            <span class="shot"><img src="assets/img/photography/DSCF2762-display.jpg" loading="lazy" alt="Three harlequin-painted Volkswagen Beetles parked before tropical trees" width="1200" height="800"></span>
-            <figcaption class="plate"><span class="n">Pl. 03</span> <span class="place"><span class="en">Interior de SP · 2025</span><span class="pt">Interior de SP · 2025</span></span></figcaption>
-          </button>
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF1284-full.jpg"
-            data-n="04" data-en="Field notes · São Paulo, 2024" data-pt="Anotações de campo · São Paulo, 2024">
-            <span class="shot"><img src="assets/img/photography/DSCF1284-display.jpg" loading="lazy" alt="A person sketches a plan across a long roll of paper at night" width="800" height="1200"></span>
-            <figcaption class="plate"><span class="n">Pl. 04</span> <span class="place"><span class="en">São Paulo · 2024</span><span class="pt">São Paulo · 2024</span></span></figcaption>
-          </button>
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF2803-full.jpg"
-            data-n="05" data-en="Pavilhão de tijolos, 2025" data-pt="Pavilhão de tijolos, 2025">
-            <span class="shot"><img src="assets/img/photography/DSCF2803-display.jpg" loading="lazy" alt="Brickwork, shade sails and hammocks seen through a narrow gap" width="800" height="1200"></span>
-            <figcaption class="plate"><span class="n">Pl. 05</span> <span class="place"><span class="en">Pavilhão · 2025</span><span class="pt">Pavilhão · 2025</span></span></figcaption>
-          </button>
-
-          <button class="plate-item" type="button"
-            data-full="assets/img/photography/DSCF2996-full.jpg"
-            data-n="06" data-en="Vaqueiro · Chapada, 2025" data-pt="Vaqueiro · Chapada, 2025">
-            <span class="shot"><img src="assets/img/photography/DSCF2996-display.jpg" loading="lazy" alt="A man in a wide hat pauses below a mountain in the Brazilian highlands" width="800" height="1200"></span>
-            <figcaption class="plate"><span class="n">Pl. 06</span> <span class="place"><span class="en">Chapada · 2025</span><span class="pt">Chapada · 2025</span></span></figcaption>
-          </button>
-
-        </div>
+        <!-- Gallery is built at runtime from the manifest below. To add photos,
+             edit assets/img/photography/photos.md — no HTML changes needed. -->
+        <div class="gallery reveal" data-manifest="assets/img/photography/photos.md"></div>
 
         <p class="note reveal" style="margin-top:2.6rem">
           <span class="en">More to come as the portfolio grows. Prints and full-resolution files on request — <a class="link" href="mailto:brunobensadon@gmail.com">email me.</a></span>
@@ -123,7 +81,7 @@
     <button class="lb-btn lb-prev" type="button" aria-label="Previous">←</button>
     <button class="lb-btn lb-next" type="button" aria-label="Next">→</button>
     <div class="lb-bar container">
-      <span class="lb-cap"><span class="n">Pl. 01</span> <span class="place"><span class="en"></span><span class="pt"></span></span></span>
+      <span class="lb-cap"><span class="n">Pl. 01</span> <span class="place"></span></span>
       <span class="lb-count">01 / 06</span>
     </div>
   </div>

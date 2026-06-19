@@ -38,13 +38,28 @@ and `.pt` spans.**
 - New page? Copy a scaffold page (e.g. `training.html`) — it already has the
   nav, language toggle and footer wired up. Set `aria-current="page"` on its nav link.
 - Replace the portrait at `assets/img/portrait.jpg` (+ `@2x`); keep the 4:5 ratio.
-- Photography: drop web-optimized images into `assets/img/` (long edge ≈ 1600px,
-  quality ~82, EXIF stripped) and build a gallery grid in `photography.html`.
+- Photography: managed from a single file — see below. No HTML editing, no
+  manual resizing.
+
+## Photography
+Adding a photo is two steps, no HTML or image-editing required:
+
+1. Drop the **full-size original** into `assets/img/photography/` (e.g. `DSCF1234.jpg`).
+2. Add one row to [`assets/img/photography/photos.md`](assets/img/photography/photos.md):
+   `file | place | year | caption`. Row order = display order; `caption` is
+   language-neutral and doubles as the image's alt text.
+
+Then commit & push. A GitHub Action (`.github/workflows/photos.yml`) generates the
+web-sized copies (`-display` ≤800px for the grid, `-full` ≤1600px for the lightbox;
+EXIF stripped, quality 82) and commits them back. The gallery on `photography.html`
+is built at runtime from `photos.md` by `assets/js/main.js`, so the page never needs
+editing. (To replace an existing photo, delete its `-display`/`-full` copies so the
+Action regenerates them.)
 
 ## Roadmap
 - [ ] Research: full write-ups, abstracts, repo + paper links
 - [ ] Training: downloadable session outlines & curricula
-- [ ] Photography: curated, optimized gallery with lightbox
+- [x] Photography: curated, optimized gallery with lightbox (manifest-driven)
 - [ ] Optional: dark "night paper" theme (tokens are already centralized)
 
 ## Local preview
