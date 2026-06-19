@@ -12,10 +12,14 @@ row below. Push to GitHub — web-sized copies are generated automatically. No H
   the image's alt text for accessibility. Keep it factual and language-neutral.
 
 | file     | place              | year | caption                                                              |
-|----------|--------------------|------|----------------------------------------------------------------------|
-| DSCF2858 | Serra do Cipó      | 2025 | A hiker and dog face a mountain in the highlands                      |
-| DSCF1312 | Centro · São Paulo | 2024 | A street musician plays guitar on a São Paulo pavement               |
-| DSCF2762 | Interior de SP     | 2025 | Three harlequin-painted Volkswagen Beetles parked before tropical trees |
-| DSCF1284 | São Paulo          | 2024 | A person sketches a plan across a long roll of paper at night         |
-| DSCF2803 | Pavilhão           | 2025 | Brickwork, shade sails and hammocks seen through a narrow gap         |
-| DSCF2996 | Chapada            | 2025 | A man in a wide hat pauses below a mountain in the Brazilian highlands |
+|----------|-----------------------|------|----------------------------------------------------------------------|
+| DSCF2858 | Lapinha da Serra, MG  | Jul 2025 | Lapinha da Serra, MG – Jul 2025 |
+| DSCF1312 | São Paulo | Jan 2025 | São Paulo – Jan 2025               |
+| DSCF2762 | Inhotim     | Jul 2025 | Inhotim – Jul 2025 |
+| DSCF1284 | São Paulo          | Jan 2025 | São Paulo – Jan 2025     |
+| DSCF2803 | Inhotim           | Jul 2025 | Inhotim – Jul 2025         |
+| DSCF2996 | Lapinha da Serra, MG     | 2025 | Lapinha da Serra, MG – Jul 2025 |
+| DSCF2697 | Inhotim            | Jul 2025 | Inhotim – Jul 2025 |
+| DSCF3174 | Corcovado, RJ            | Jul 2025 | Corcovado, RJ – Jul 2025 |
+| DSCF1313 | São Paulo        | Jan 2025 | São Paulo – Jan 2025 |
+| DSCF5727 | Bogotá            | Apr 2026 | Bogotá – 2026 |
