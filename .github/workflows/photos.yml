@@ -1,0 +1,61 @@
+name: Generate photo web copies
+
+# When a full-size original is added/changed under the photography folder,
+# generate the web-sized copies (-display ≤800px, -full ≤1600px, EXIF stripped)
+# and commit them back. You only ever commit the original + a row in photos.md.
+
+on:
+  push:
+    paths:
+      - "assets/img/photography/**.jpg"
+      - "assets/img/photography/**.jpeg"
+      - "assets/img/photography/**.JPG"
+      - "assets/img/photography/**.JPEG"
+      - ".github/workflows/photos.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  resize:
+    # Skip runs triggered by this workflow's own commit.
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
+
+      - name: Generate web copies for originals
+        run: |
+          shopt -s nullglob nocaseglob
+          cd assets/img/photography
+          for src in *.jpg *.jpeg; do
+            case "$src" in
+              *-display.*|*-full.*) continue ;;   # skip generated copies
+            esac
+            base="${src%.*}"
+            display="${base}-display.jpg"
+            full="${base}-full.jpg"
+            if [ ! -f "$display" ]; then
+              convert "$src" -auto-orient -strip -resize '800x800>' -quality 82 "$display"
+              echo "created $display"
+            fi
+            if [ ! -f "$full" ]; then
+              convert "$src" -auto-orient -strip -resize '1600x1600>' -quality 82 "$full"
+              echo "created $full"
+            fi
+          done
+
+      - name: Commit generated copies
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/img/photography
+          if git diff --cached --quiet; then
+            echo "No new web copies to commit."
+          else
+            git commit -m "Generate photo web copies [skip ci]"
+            git push
+          fi

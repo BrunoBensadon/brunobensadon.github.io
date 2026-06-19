@@ -93,14 +93,66 @@
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();
 
-  /* ---------- 6. Lightbox ---------- */
-  var lb = document.getElementById("lightbox");
-  if (lb) {
+  /* ---------- 6. Gallery from manifest ----------
+     A .gallery[data-manifest] is built at runtime from a Markdown table
+     (file | place | year | caption). This keeps photo management to a single
+     .md file — no HTML editing. See assets/img/photography/photos.md. */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function parseManifest(text) {
+    var rows = [];
+    text.split(/\r?\n/).forEach(function (line) {
+      if (line.indexOf("|") === -1) return;            // not a table row
+      var cells = line.split("|").map(function (c) { return c.trim(); });
+      if (cells[0] === "") cells.shift();              // leading pipe
+      if (cells.length && cells[cells.length - 1] === "") cells.pop(); // trailing pipe
+      if (cells.length < 4) return;
+      var file = cells[0];
+      if (file.toLowerCase() === "file" || /^:?-+:?$/.test(file)) return; // header / divider
+      rows.push({ file: file, place: cells[1], year: cells[2], caption: cells[3] });
+    });
+    return rows;
+  }
+
+  function buildGallery(gallery, rows) {
+    var dir = gallery.getAttribute("data-manifest").replace(/[^\/]*$/, ""); // manifest folder
+    gallery.innerHTML = rows.map(function (r, i) {
+      var n = String(i + 1).padStart(2, "0");
+      var placeYear = r.place + (r.year ? " · " + r.year : "");
+      return '<button class="plate-item" type="button"' +
+        ' data-full="' + esc(dir + r.file + "-full.jpg") + '"' +
+        ' data-n="' + n + '" data-caption="' + esc(r.caption) + '">' +
+          '<span class="shot"><img src="' + esc(dir + r.file + "-display.jpg") +
+            '" loading="lazy" alt="' + esc(r.caption) + '"></span>' +
+          '<figcaption class="plate"><span class="n">Pl. ' + n + '</span> ' +
+            '<span class="place">' + esc(placeYear) + '</span></figcaption>' +
+        '</button>';
+    }).join("");
+  }
+
+  var gallery = document.querySelector(".gallery[data-manifest]");
+  if (gallery) {
+    fetch(gallery.getAttribute("data-manifest"))
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
+      .then(function (text) { buildGallery(gallery, parseManifest(text)); initLightbox(); })
+      .catch(function () { /* leave gallery empty; the note below still invites email */ });
+  } else {
+    initLightbox();
+  }
+
+  /* ---------- 7. Lightbox ---------- */
+  function initLightbox() {
+    var lb = document.getElementById("lightbox");
+    if (!lb) return;
     var items = Array.prototype.slice.call(document.querySelectorAll(".plate-item"));
+    if (!items.length) return;
     var stageImg = lb.querySelector(".lb-stage img");
     var capN = lb.querySelector(".lb-cap .n");
-    var capEn = lb.querySelector(".lb-cap .place .en");
-    var capPt = lb.querySelector(".lb-cap .place .pt");
+    var capPlace = lb.querySelector(".lb-cap .place");
     var counter = lb.querySelector(".lb-count");
     var btnPrev = lb.querySelector(".lb-prev");
     var btnNext = lb.querySelector(".lb-next");
@@ -112,18 +164,16 @@
       var el = items[i];
       if (!el) return;
       var full = el.getAttribute("data-full");
-      var en = el.getAttribute("data-en") || "";
-      var pt = el.getAttribute("data-pt") || en;
+      var caption = el.getAttribute("data-caption") || "";
       var n = el.getAttribute("data-n") || String(i + 1).padStart(2, "0");
       stageImg.classList.remove("swap");
       // force reflow to retrigger the swap animation
       void stageImg.offsetWidth;
       stageImg.src = full;
-      stageImg.alt = (root.getAttribute("data-lang") === "pt" ? pt : en);
+      stageImg.alt = caption;
       stageImg.classList.add("swap");
       capN.textContent = "Pl. " + n;
-      capEn.textContent = en;
-      capPt.textContent = pt;
+      capPlace.textContent = caption;
       counter.textContent = String(i + 1).padStart(2, "0") + " / " + String(items.length).padStart(2, "0");
       current = i;
     }
