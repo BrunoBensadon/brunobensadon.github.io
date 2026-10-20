@@ -15,7 +15,6 @@ row below. Push to GitHub — web-sized copies are generated automatically. No H
 |----------|-----------------------|------|----------------------------------------------------------------------|
 | DSCF2858 | Lapinha da Serra, MG  | Jul 2025 | Lapinha da Serra, MG – Jul 2025 |
 | DSCF2762 | Inhotim     | Jul 2025 | Inhotim – Jul 2025 |
-| DSCF1284 | São Paulo          | Jan 2025 | São Paulo – Jan 2025     |
 | DSCF2803 | Inhotim           | Jul 2025 | Inhotim – Jul 2025         |
 | DSCF2996 | Lapinha da Serra, MG     | 2025 | Lapinha da Serra, MG – Jul 2025 |
 | DSCF2697 | Inhotim            | Jul 2025 | Inhotim – Jul 2025 |

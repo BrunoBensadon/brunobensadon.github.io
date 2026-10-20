@@ -136,7 +136,7 @@
 
   var gallery = document.querySelector(".gallery[data-manifest]");
   if (gallery) {
-    fetch(gallery.getAttribute("data-manifest"))
+    fetch(gallery.getAttribute("data-manifest"), { cache: "no-cache" }) // revalidate so new photos show right after a deploy
       .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); })
       .then(function (text) { buildGallery(gallery, parseManifest(text)); initLightbox(); })
       .catch(function () { /* leave gallery empty; the note below still invites email */ });
