@@ -19,7 +19,7 @@ assets/
   css/style.css      Design system (all visual tokens live here)
   js/main.js         Language toggle, nav, scroll reveals
   img/               portrait + favicon (web-optimized)
-cv/                  CV in PDF + .docx
+cv/                  CV (PDF only)
 CLAUDE_DESIGN_PROMPT.md   Brief to push the design further in Claude Design
 ```
 
